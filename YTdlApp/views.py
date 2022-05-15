@@ -7,6 +7,6 @@ def index(request):
         link = request.POST['link']
         video = YouTube(link)
         stream = video.streams.first()
-        stream.download()
+        stream.download('~/Downloads')
         return render(request,'index.html',{'msg':'Video downloaded'})
     return render(request,'index.html',{'msg':'Video not downloaded'})
